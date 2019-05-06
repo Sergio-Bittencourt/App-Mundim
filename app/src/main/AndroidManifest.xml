@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.mundim">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/icon"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.SampleActivity">
+        </activity>
+        <activity android:name=".Activities.NewSampleActivity">
+        </activity>
+        <activity android:name=".Activities.PictureActivity">
+        </activity>
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="com.example.mundim"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".Activities.PatientActivity">
+        </activity>
+        <activity android:name=".Activities.NewPatientActivity">
+        </activity>
+        <activity android:name=".Activities.PatientsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

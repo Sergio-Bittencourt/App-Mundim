@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">montserrat</item>
+        <item name="android:colorEdgeEffect">@color/colorAccent</item>
+    </style>
+
+    <!-- Base title theme. -->
+    <style name="TitleTheme" parent="TextAppearance.AppCompat.Title">
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">montserrat</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Base body theme. -->
+    <style name="Body1Theme" parent="TextAppearance.AppCompat.Body1">
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">montserrat</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+</resources>

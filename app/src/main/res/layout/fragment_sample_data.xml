@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".Fragments.PatientDataFragment"
+                                             android:background="@color/colorPrimary">
+
+    <ScrollView android:layout_width="0dp" android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/sendBtn"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content">
+
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoCorrect|textPersonName|textCapWords"
+                    android:ems="10"
+                    android:id="@+id/areaAnatomicaTextView"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:hint="Área Anatômica"
+                    android:fontFamily="@font/montserrat"
+                    android:typeface="normal" android:textSize="12sp" app:layout_constraintHorizontal_bias="0.0"
+                    android:backgroundTint="@color/grey_1" android:textStyle="normal"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="parent"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoCorrect|textMultiLine|textPersonName|textCapSentences|textAutoComplete"
+                    android:ems="10"
+                    android:id="@+id/antecedentesFamiliaresTextView" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/areaAnatomicaTextView" android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:hint="Antecedentes Familiares"
+                    android:fontFamily="@font/montserrat"
+                    android:typeface="normal" android:textSize="12sp" app:layout_constraintHorizontal_bias="0.0"
+                    android:backgroundTint="@color/grey_1" android:textStyle="normal"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoCorrect|textMultiLine|textPersonName|textCapSentences|textAutoComplete"
+                    android:ems="10"
+                    android:id="@+id/diadnosticoDTextView" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/antecedentesFamiliaresTextView" android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:hint="Diagnóstico Dermatologista"
+                    android:fontFamily="@font/montserrat"
+                    android:typeface="normal" android:textSize="12sp" app:layout_constraintHorizontal_bias="1.0"
+                    android:backgroundTint="@color/grey_1" android:textStyle="normal"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoCorrect|textMultiLine|textPersonName|textCapSentences|textAutoComplete"
+                    android:ems="10"
+                    android:id="@+id/diagnosticoBTextView"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent" android:hint="Diagnóstico Biópsia"
+                    android:fontFamily="@font/montserrat"
+                    android:typeface="normal" android:textSize="12sp" app:layout_constraintHorizontal_bias="1.0"
+                    android:backgroundTint="@color/grey_1" android:textStyle="normal"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/diadnosticoDTextView"/>
+            <android.support.constraint.Guideline
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/guideline"
+                    app:layout_constraintGuide_percent="0.5"/>
+            <android.support.constraint.Guideline
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/guideline2"
+                    app:layout_constraintGuide_percent="0.74"/>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+    <Button
+            android:text="Salvar"
+            android:layout_width="0dp"
+            android:id="@+id/sendBtn" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAppearance="@style/TitleTheme" android:fontFamily="@font/montserrat" android:typeface="normal"
+            android:background="@color/colorPrimaryDark" android:layout_height="51dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"/>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/sendBtn" android:background="@color/grey_2"
+            android:id="@+id/constraintLayout3">
+
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/grey_2"
+            android:id="@+id/constraintLayout4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
