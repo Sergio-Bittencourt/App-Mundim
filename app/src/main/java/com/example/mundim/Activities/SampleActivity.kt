@@ -3,23 +3,18 @@ package com.example.mundim.Activities
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.android.volley.Response
 import com.example.mundim.R
 import com.example.mundim.Services.GET_DERMA_IMAGE
-import com.example.mundim.Services.GET_NEW_SAMPLE_DATA
 import com.example.mundim.Services.execute
 import com.example.mundim.Services.showToast
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_sample.*
-import kotlinx.android.synthetic.main.fragment_patient_data2.*
-import android.graphics.Bitmap
 import android.app.Activity
 import android.provider.MediaStore
 import com.example.mundim.Classes.Auxiliary.ImageUploader
-import org.jetbrains.anko.async
 
 class SampleActivity : AppCompatActivity() {
 
@@ -55,12 +50,29 @@ class SampleActivity : AppCompatActivity() {
                 intent.extras.getString("url")).noFade().into(sampleImage, object : Callback {
             override fun onError(e: Exception) {
                 showToast("Sem fotos salvas da amostra.")
-                progressBar2.visibility = View.GONE
+                progressBarSampleImage.visibility = View.GONE
             }
             override fun onSuccess() {
                 sampleImage.setAlpha(0f)
                 sampleImage.animate().setDuration(500).alpha(1f).start()
-                progressBar2.visibility = View.GONE
+                progressBarSampleImage.visibility = View.GONE
+                labelCamera.visibility = View.VISIBLE
+            }
+
+        })
+        Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
+                intent.extras.getString("derma_url")).noFade().into(dermaImage, object : Callback {
+            override fun onError(e: Exception) {
+                progressBarDerma.visibility = View.GONE
+                dermaImage.visibility = View.GONE
+                labelDerma.visibility = View.GONE
+            }
+            override fun onSuccess() {
+                sampleImage.setAlpha(0f)
+                sampleImage.animate().setDuration(500).alpha(1f).start()
+                progressBarDerma.visibility = View.GONE
+                labelDerma.visibility = View.VISIBLE
+                dermaImage.visibility = View.VISIBLE
             }
 
         })
@@ -72,6 +84,11 @@ class SampleActivity : AppCompatActivity() {
         sampleImage.setOnClickListener {
             val intt = Intent(this, PictureActivity::class.java)
             intt.putExtra("url", intent.extras.getString("url"))
+            startActivity(intt)
+        }
+        dermaImage.setOnClickListener {
+            val intt = Intent(this, PictureActivity::class.java)
+            intt.putExtra("url", intent.extras.getString("derma_url"))
             startActivity(intt)
         }
 
@@ -119,6 +136,24 @@ class SampleActivity : AppCompatActivity() {
                 WHERE id = $id
             """.trimIndent()
             execute(input, this, Response.Listener { response ->  })
+            intent.putExtra("derma_url", derma_url)
+
+            Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
+                    derma_url).noFade().into(dermaImage, object : Callback {
+                override fun onError(e: Exception) {
+                    progressBarDerma.visibility = View.GONE
+                    dermaImage.visibility = View.GONE
+                    labelDerma.visibility = View.GONE
+                }
+                override fun onSuccess() {
+                    sampleImage.setAlpha(0f)
+                    sampleImage.animate().setDuration(500).alpha(1f).start()
+                    progressBarDerma.visibility = View.GONE
+                    labelDerma.visibility = View.VISIBLE
+                    dermaImage.visibility = View.VISIBLE
+                }
+
+            })
         }
     }
 }

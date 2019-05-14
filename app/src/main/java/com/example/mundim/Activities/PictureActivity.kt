@@ -4,14 +4,10 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.mundim.R
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_picture.*
-import kotlinx.android.synthetic.main.fragment_patient_data2.view.*
 import android.graphics.Bitmap
-import android.os.Environment.getExternalStorageDirectory
-import android.provider.MediaStore.Images.Media.getBitmap
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Environment
@@ -25,7 +21,7 @@ class PictureActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.mundim.R.layout.activity_picture)
-        progressBar2.visibility = View.VISIBLE
+        progressBarSampleImage.visibility = View.VISIBLE
 
         backBtn.setOnClickListener {
             onBackPressed()
@@ -58,7 +54,7 @@ class PictureActivity : AppCompatActivity() {
             override fun onSuccess() {
                 sampleImage.setAlpha(0f)
                 sampleImage.animate().setDuration(500).alpha(1f).start()
-                progressBar2.visibility = View.GONE
+                progressBarSampleImage.visibility = View.GONE
             }
 
         })

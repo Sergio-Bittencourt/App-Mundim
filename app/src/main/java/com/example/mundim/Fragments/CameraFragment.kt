@@ -210,7 +210,7 @@ class CameraFragment : Fragment(), View.OnClickListener,
                 val characteristics = manager.getCameraCharacteristics(cameraId)
 
                 val maxZoomLevel = characteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM)
-                var zoomLevel = 2f // DEFAULT ZOOM
+                var zoomLevel = 1f // DEFAULT ZOOM
                 if (maxZoomLevel < zoomLevel){
                     zoomLevel = maxZoomLevel
                 }

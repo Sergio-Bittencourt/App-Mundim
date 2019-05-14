@@ -13,7 +13,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/constraintLayout" android:background="@color/colorPrimaryDark">
+            android:id="@+id/topBarLayout" android:background="@color/colorPrimaryDark">
 
         <ImageButton
                 android:id="@+id/optionsBtn" android:layout_width="45dp"
@@ -44,7 +44,7 @@
             android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintHorizontal_bias="1.0"
             android:id="@+id/viewPager2"
             android:background="@color/colorPrimary"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
         <fragment
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:name="com.example.mundim.Fragments.PatientDataFragment"

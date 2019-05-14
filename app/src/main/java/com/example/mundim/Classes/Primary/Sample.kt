@@ -13,6 +13,7 @@ class Sample{
     var diagnostico_dermatologista:String? = null
     var diagnostico_biopsia:String? = null
     var url:String? = null
+    var derma_url:String? = null
     var nome:String? = null
     var data:String? = null
     constructor(id:String="",
@@ -23,7 +24,8 @@ class Sample{
                 diagnostico_biopsia:String="",
                 url:String="",
                 nome:String="",
-                data:String=""
+                data:String="",
+                derma_url:String?=""
     ){
         this.id = id
         this.patient_id = patient_id
@@ -34,5 +36,6 @@ class Sample{
         this.url = url
         this.nome = nome
         this.data = data
+        this.derma_url = derma_url
     }
 }

@@ -140,6 +140,7 @@ class PatientActivity : AppCompatActivity(), AmostrasFragment.SampleFragmentInte
                     samples[position].area_anatomica = data!!.extras.getString("area_anatomica")
                     samples[position].diagnostico_dermatologista = data!!.extras.getString("diagnostico_dermatologista")
                     samples[position].diagnostico_biopsia = data!!.extras.getString("diagnostico_biopsia")
+                    samples[position].derma_url = data!!.extras.getString("derma_url")
                 }
             }
         }

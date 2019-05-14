@@ -28,7 +28,8 @@ fun Bitmap.rotate(): Bitmap{
 }
 
 fun Bitmap.crop():Bitmap{
-    return Bitmap.createBitmap(this, ((this.width * 0.5) - 150).toInt(), ((this.height * 0.25)).toInt(), 300, 300)
+    //return Bitmap.createBitmap(this, ((this.width * 0.5) - 150).toInt(), ((this.height * 0.25)).toInt(), 300, 300)
+    return this
 }
 
 /**

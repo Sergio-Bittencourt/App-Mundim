@@ -10,7 +10,7 @@
     <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" android:id="@+id/tabLayout"
+            app:layout_constraintTop_toBottomOf="@+id/topBarLayout" android:id="@+id/tabLayout"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:tabBackground="@android:color/white" app:tabTextAppearance="@style/Body1Theme">
 
@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/constraintLayout" android:background="@color/colorPrimaryDark">
+            android:id="@+id/topBarLayout" android:background="@color/colorPrimaryDark">
 
         <ImageButton
                 android:id="@+id/optionsBtn" android:layout_width="45dp"

@@ -83,6 +83,7 @@ class SampleAdapter: BaseAdapter {
         myView.setOnClickListener{
             val intent = Intent(context, SampleActivity::class.java)
             intent.putExtra("url", sample.url)
+            intent.putExtra("derma_url", sample.derma_url)
             intent.putExtra("id", sample.id)
             intent.putExtra("area_anatomica", sample.area_anatomica)
             intent.putExtra("antecedentes_familiares", sample.antecedentes_familiares)

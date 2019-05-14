@@ -10,8 +10,8 @@ android {
         applicationId "org.cis.mundimapp2"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 8
-        versionName "4.4"
+        versionCode 9
+        versionName "4.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

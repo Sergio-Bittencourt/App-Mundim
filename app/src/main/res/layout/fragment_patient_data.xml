@@ -204,14 +204,14 @@
             android:textAppearance="@style/TitleTheme" android:fontFamily="@font/montserrat" android:typeface="normal"
             android:background="@color/colorPrimaryDark" android:layout_height="51dp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"/>
+            app:layout_constraintBottom_toTopOf="@+id/saveBtnBottomSeparator"/>
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="1px"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/sendBtn" android:background="@color/grey_2"
-            android:id="@+id/constraintLayout3">
+            android:id="@+id/saveBtnTopSeparator">
 
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
@@ -220,7 +220,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/grey_2"
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/saveBtnBottomSeparator"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="parent">
 

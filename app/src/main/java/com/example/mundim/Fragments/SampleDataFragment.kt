@@ -83,7 +83,7 @@ class SampleDataFragment : Fragment() {
             var destination = File(activity?.getExternalFilesDir(null), "$sample_id")
             origin.copyTo(destination)
             val bitmap = MediaStore.Images.Media.getBitmap(activity!!.contentResolver, Uri.fromFile(destination)).rotate().crop()
-            ImageUploader().uploadImage(bitmap, activity as NewSampleActivity, sample_id, 100)
+            ImageUploader().uploadImage(bitmap, activity as NewSampleActivity, sample_id, 50)
         }
 
         return view

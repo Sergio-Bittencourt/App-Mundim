@@ -45,9 +45,6 @@ class NewPatientActivity : AppCompatActivity() {
         backBtn.setOnClickListener{
             onBackPressed()
         }
-        optionsBtn.setOnClickListener {
-            toast("Estamos trabalhando nisso! Virá junto com a função de login!")
-        }
     }
 
 }

@@ -94,26 +94,6 @@ class PatientData2Fargment : Fragment() {
         view.procedenciaTextView.setText(activity!!.intent.extras.getString("procedencia"))
         view.naturalidadeTextView.setText(activity!!.intent.extras.getString("naturalidade"))
         view.estadoTextView.setText(activity!!.intent.extras.getString("estado"))
-
-        /*
-        view.progressBar.visibility = View.VISIBLE
-        Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
-                activity!!.intent.extras.getString("sample_id")).noFade().into(view.sampleImageView, object : Callback {
-            override fun onError(e: Exception) {}
-            override fun onSuccess() {
-                view.sampleImageView.setAlpha(0f)
-                view.sampleImageView.animate().setDuration(500).alpha(1f).start()
-                view.progressBar.visibility = View.GONE
-            }
-
-        })
-
-        view.sampleImageView.setOnClickListener {
-            val intent = Intent(context, PictureActivity::class.java)
-            intent.putExtra("sample_id", activity!!.intent.extras.getString("sample_id"))
-            startActivity(intent)
-        } */
-
         view.termosBtn.setOnClickListener {
             dispatchTakePictureIntent()
         }
