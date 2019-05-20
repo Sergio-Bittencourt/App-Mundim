@@ -79,7 +79,7 @@ class PatientData2Fargment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         galleryAddPic()
-        showToast("Termo de consentimento adicionado.")
+        showToast("Termo de consentimento adicionado")
     }
 
     override fun onCreateView(

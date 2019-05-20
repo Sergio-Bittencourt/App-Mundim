@@ -86,12 +86,6 @@ class PatientsActivity : AppCompatActivity(){
             val intent = Intent(this, NewPatientActivity::class.java)
             startActivityForResult(intent, GET_NEW_PATIENT_DATA )
         }
-        optionsBtn.setOnClickListener {
-            toast("Estamos trabalhando nisso! Virá junto com a função de login!")
-        }
-        menuBtn.setOnClickListener {
-            toast("Estamos trabalhando nisso! Virá junto com a função de login!")
-        }
 
         patientsAdapter = PatientTicketAdapter(this, patients)
         patientsListView.adapter = patientsAdapter

@@ -53,8 +53,5 @@ class NewSampleActivity : AppCompatActivity() {
         backBtn.setOnClickListener{
             onBackPressed()
         }
-        optionsBtn.setOnClickListener {
-            toast("Estamos trabalhando nisso!")
-        }
     }
 }

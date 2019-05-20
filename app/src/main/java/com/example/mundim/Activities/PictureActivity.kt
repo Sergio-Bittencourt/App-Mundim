@@ -46,7 +46,7 @@ class PictureActivity : AppCompatActivity() {
             val contentUri = Uri.fromFile(outFile)
             intent.data = contentUri
             sendBroadcast(intent)
-            showToast("Salvo com sucesso!")
+            showToast("Foto salva na galeria")
         }
         Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
                 intent.extras.getString("url")).noFade().into(sampleImage, object : Callback {

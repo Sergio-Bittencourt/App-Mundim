@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_sample.*
 import android.app.Activity
 import android.provider.MediaStore
+import android.util.Log
 import com.example.mundim.Classes.Auxiliary.ImageUploader
 
 class SampleActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class SampleActivity : AppCompatActivity() {
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), GET_DERMA_IMAGE)
         }
+
         trashBtn.setOnClickListener {
             intent.putExtra("deleted", 1)
             intent.putExtra("position", intent.extras.getString("position"))
@@ -60,9 +62,10 @@ class SampleActivity : AppCompatActivity() {
             }
 
         })
-        Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
-                intent.extras.getString("derma_url")).noFade().into(dermaImage, object : Callback {
+        val url = "http://68.183.133.221/mundim/uploads/" + intent.extras.getString("derma_url")
+        Picasso.get().load(url).noFade().into(dermaImage, object : Callback {
             override fun onError(e: Exception) {
+                Log.e("Picasso Load", "FAILED " + url + " " + e.toString())
                 progressBarDerma.visibility = View.GONE
                 dermaImage.visibility = View.GONE
                 labelDerma.visibility = View.GONE
@@ -138,8 +141,7 @@ class SampleActivity : AppCompatActivity() {
             execute(input, this, Response.Listener { response ->  })
             intent.putExtra("derma_url", derma_url)
 
-            Picasso.get().load("http://68.183.133.221/mundim/uploads/" +
-                    derma_url).noFade().into(dermaImage, object : Callback {
+            Picasso.get().load(data?.data).noFade().into(dermaImage, object : Callback {
                 override fun onError(e: Exception) {
                     progressBarDerma.visibility = View.GONE
                     dermaImage.visibility = View.GONE

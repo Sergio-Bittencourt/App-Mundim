@@ -97,9 +97,6 @@ class PatientActivity : AppCompatActivity(), AmostrasFragment.SampleFragmentInte
         backBtn2.setOnClickListener{
             onBackPressed()
         }
-        optionsBtn.setOnClickListener {
-            toast("Estamos trabalhando nisso! Virá junto com a função de login!")
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
